@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/static/css/main.f116272b.chunk.css",
-    "main.js": "/static/js/main.e287d420.chunk.js",
+    "main.js": "/static/js/main.c1dfa6b6.chunk.js",
     "runtime-main.js": "/static/js/runtime-main.a2d2d073.js",
     "static/css/2.80a40609.chunk.css": "/static/css/2.80a40609.chunk.css",
-    "static/js/2.540d4e2c.chunk.js": "/static/js/2.540d4e2c.chunk.js",
+    "static/js/2.7beb8d31.chunk.js": "/static/js/2.7beb8d31.chunk.js",
     "index.html": "/index.html",
-    "precache-manifest.8c450b2ddd9e2c7b923f6740a216f273.js": "/precache-manifest.8c450b2ddd9e2c7b923f6740a216f273.js",
+    "precache-manifest.f7a979269fbc404b08be070125d76f4f.js": "/precache-manifest.f7a979269fbc404b08be070125d76f4f.js",
     "service-worker.js": "/service-worker.js",
-    "static/js/2.540d4e2c.chunk.js.LICENSE.txt": "/static/js/2.540d4e2c.chunk.js.LICENSE.txt",
+    "static/js/2.7beb8d31.chunk.js.LICENSE.txt": "/static/js/2.7beb8d31.chunk.js.LICENSE.txt",
     "static/media/libs.module.css": "/static/media/404.9ed13bbe.svg",
     "static/media/login.module.css": "/static/media/bg.5825f033.svg",
     "static/media/logo-spug-txt.png": "/static/media/logo-spug-txt.a4258c04.png"
@@ -16,8 +16,8 @@
   "entrypoints": [
     "static/js/runtime-main.a2d2d073.js",
     "static/css/2.80a40609.chunk.css",
-    "static/js/2.540d4e2c.chunk.js",
+    "static/js/2.7beb8d31.chunk.js",
     "static/css/main.f116272b.chunk.css",
-    "static/js/main.e287d420.chunk.js"
+    "static/js/main.c1dfa6b6.chunk.js"
   ]
 }
