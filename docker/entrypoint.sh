@@ -9,7 +9,7 @@ fi
 
 if [ ! -d /data/spug/spug_api ]; then
     echo "going ......."
-    git clone -b $SPUG_DOCKER_VERSION https://github.com/shuson/smog.git /data/spug
+    git clone -b main https://github.com/shuson/smog.git /data/spug
     SECRET_KEY=$(< /dev/urandom tr -dc '!@#%^.a-zA-Z0-9' | head -c50)
     cat > /data/spug/spug_api/spug/overrides.py << EOF
 import os
