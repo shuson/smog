@@ -1,10 +1,10 @@
 FROM centos:7.9.2009
 
-ENV TZ=Asia/Shanghai
+ENV TZ=Asia/Singapore
 RUN yum install -y epel-release https://packages.endpointdev.com/rhel/7/os/x86_64/endpoint-repo.x86_64.rpm && yum install -y --setopt=tsflags=nodocs nginx redis mariadb-devel python36 python36-devel openldap-devel supervisor git gcc wget unzip net-tools sshpass rsync sshfs && yum -y clean all --enablerepo='*'
 
-RUN pip3 install --no-cache-dir --upgrade pip -i https://mirrors.aliyun.com/pypi/simple/
-RUN pip3 install --no-cache-dir -i https://mirrors.aliyun.com/pypi/simple/ \
+RUN pip3 install --no-cache-dir --upgrade pip
+RUN pip3 install --no-cache-dir \
     gunicorn \
     mysqlclient \
     cryptography==36.0.2 \
@@ -26,12 +26,26 @@ ENV LANG=en_US.UTF-8
 ENV LC_ALL=en_US.UTF-8
 RUN echo -e '\n# Source definitions\n. /etc/profile\n' >> /root/.bashrc
 RUN mkdir -p /data/repos
-COPY init_spug /usr/bin/
-COPY nginx.conf /etc/nginx/
-COPY ssh_config /etc/ssh/
-COPY spug.ini /etc/supervisord.d/
-COPY redis.conf /etc/
-COPY entrypoint.sh /
+RUN mkdir -p /data/spug/spug_web/build
+
+# prepare code base build
+# COPY spug_api /data/spug/spug_api
+COPY spug_web/build /data/spug/spug_web/build
+
+# RUN mkdir -p /data/spug/logs
+# RUN touch /data/spug/logs/api.log
+# RUN touch /data/spug/logs/ws.log
+# RUN touch /data/spug/logs/worker.log
+# RUN touch /data/spug/logs/monitor.log
+# RUN touch /data/spug/logs/scheduler.log
+
+COPY docker/init_spug /usr/bin/
+COPY docker/nginx.conf /etc/nginx/
+COPY docker/ssh_config /etc/ssh/
+COPY docker/spug.ini /etc/supervisord.d/
+COPY docker/redis.conf /etc/
+
+COPY docker/entrypoint.sh /
 
 VOLUME /data
 EXPOSE 80
