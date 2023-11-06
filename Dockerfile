@@ -26,18 +26,7 @@ ENV LANG=en_US.UTF-8
 ENV LC_ALL=en_US.UTF-8
 RUN echo -e '\n# Source definitions\n. /etc/profile\n' >> /root/.bashrc
 RUN mkdir -p /data/repos
-RUN mkdir -p /data/spug/spug_web/build
-
-# prepare code base build
-# COPY spug_api /data/spug/spug_api
-COPY spug_web/build /data/spug/spug_web/build
-
-# RUN mkdir -p /data/spug/logs
-# RUN touch /data/spug/logs/api.log
-# RUN touch /data/spug/logs/ws.log
-# RUN touch /data/spug/logs/worker.log
-# RUN touch /data/spug/logs/monitor.log
-# RUN touch /data/spug/logs/scheduler.log
+RUN mkdir -p /data/spug
 
 COPY docker/init_spug /usr/bin/
 COPY docker/nginx.conf /etc/nginx/
